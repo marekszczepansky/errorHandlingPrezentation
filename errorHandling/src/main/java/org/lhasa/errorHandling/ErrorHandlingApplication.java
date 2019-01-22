@@ -217,7 +217,7 @@ class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
 						response.sendError(403, "this is custom 403 handler"))
 				.authenticationEntryPoint((request, response, ex) ->
 				{
-					//					response.sendError(404, "{\"message\": \"This is custom 401 handler :(\"}");
+					//	response.sendError(404, "{\"message\": \"This is custom 401 handler :(\"}");
 					response.setStatus(401);
 					response.addHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
 					response.getOutputStream().println("{\"message\": \"This is custom 401 handler :(\"}");
